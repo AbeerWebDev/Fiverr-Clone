@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './Navbar.scss'
 
 const Navbar = () => {
     const [active, setActive] = useState(false);
     const [open, setOpen] = useState(false);
+
+    const {pathname} = useLocation()
 
     const isActive = () => {
         window.scrollY ? setActive(true) : setActive(false)
@@ -25,7 +27,7 @@ const Navbar = () => {
     }
 
   return (
-    <div className={active ? "navbar active" : "navbar"}>
+    <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
       <div className="container">
         <div className="logo">
           <Link className="link" to="/">
@@ -74,12 +76,37 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {active && (
+      {(active || pathname !=='/') && (
         <>
           <hr />
           <div className="menu">
-            <span>test</span>
-            <span>test2</span>
+            <Link className="link" to="/">
+              <span>Graphics & Design</span>
+            </Link>
+            <Link className="link" to="/">
+              <span>Video & Animation</span>
+            </Link>
+            <Link className="link" to="/">
+              <span>Writing & Translation</span>
+            </Link>
+            <Link className="link" to="/">
+              <span>AI Services</span>
+            </Link>
+            <Link className="link" to="/">
+              <span>Digital Marketing</span>
+            </Link>
+            <Link className="link" to="/">
+              <span>Music & Audio</span>
+            </Link>
+            <Link className="link" to="/">
+              <span>Programming & Tech</span>
+            </Link>
+            <Link className="link" to="/">
+              <span>Business</span>
+            </Link>
+            <Link className="link" to="/">
+              <span>Lifestyle</span>
+            </Link>
           </div>
         </>
       )}

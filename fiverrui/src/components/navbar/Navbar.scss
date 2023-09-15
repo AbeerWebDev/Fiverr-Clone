@@ -14,7 +14,7 @@
     }
 
     .container {
-        width: 1040px;
+        width: 1200px;
         display: flex;
         justify-content: space-between;
         padding: 20px 0px;
@@ -92,11 +92,14 @@
     }
 
     .menu {
+        display: flex;
+        gap: 8px;
         width: 1040px;
         padding: 10px 0px;
         display: flex;
         justify-content: space-between;
         font-weight: 300;
+        font-size: 14px;
         color: gray;
         font-family: 'Montserrat', sans-serif;
 
