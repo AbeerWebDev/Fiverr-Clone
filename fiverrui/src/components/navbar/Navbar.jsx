@@ -108,6 +108,7 @@ const Navbar = () => {
               <span>Lifestyle</span>
             </Link>
           </div>
+          <hr />
         </>
       )}
     </div>

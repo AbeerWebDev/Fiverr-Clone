@@ -1,1 +1,90 @@
-.message{}
+.message {
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 1200px;
+        margin: 50px;
+
+        .breadcrumbs {
+            font-weight: 300;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .messages {
+            margin: 30px 0px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 500px;
+            overflow: scroll;
+
+            .item {
+                display: flex;
+                gap: 20px;
+                max-width: 600px;
+                font-size: 18px;
+
+                &.owner {
+                    flex-direction: row-reverse;
+                    align-self: flex-end;
+                    
+                    p {
+                        border-radius: 20px 0px 20px 20px;
+                        background-color: royalblue;
+                        color: white;
+                    }
+                }
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                p {
+                    padding: 20px;
+                    background-color: rgb(238, 236, 236);
+                    border-radius: 0px 20px 20px 20px;
+                    font-weight: 300;
+                    color: gray;
+                }
+            }
+        }
+
+        hr {
+            height: 0;
+            border: 0.5px solid rgb(224, 222, 222);
+            margin-bottom: 20px;
+        }
+
+        .write {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            textarea {
+                width: 80%;
+                height: 100px;
+                padding: 10px;
+                border: 1px solid lightgray;
+                border-radius: 10px;
+            }
+
+            button {
+                background-color: #1dbf73;
+                color: white;
+                cursor: pointer;
+                border: none;
+                font-weight: 500;
+                font-size: 13px;
+                padding: 20px;
+                border-radius: 10px;
+                width: 100px;
+            }
+        }
+    }
+}
