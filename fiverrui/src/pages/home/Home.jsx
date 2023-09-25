@@ -7,7 +7,6 @@ import CatCard from '../../components/catCard/catCard';
 import ProjectCard from '../../components/projectCard/ProjectCard';
 import Slide from '../../components/slide/slide';
 
-
 const Home = () => {
   return (
     <div className="home">

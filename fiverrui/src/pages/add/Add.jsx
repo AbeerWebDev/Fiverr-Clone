@@ -39,7 +39,7 @@ const Add = () => {
             <input type="text" placeholder='e.g. file uploading'/>
             <input type="text" placeholder='e.g. setting up a domain'/>
             <input type="text" placeholder='e.g. hosting'/>
-            <label htmlFor="">Price m</label>
+            <label htmlFor="">Price </label>
             <input type="number" min={1} />
           </div>
          </div>

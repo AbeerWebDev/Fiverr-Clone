@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './Navbar.scss'
+import newRequest from '../../utils/newRequest';
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
     const [active, setActive] = useState(false);
     const [open, setOpen] = useState(false);
 
     const {pathname} = useLocation()
+    const navigate = useNavigate()
 
     const isActive = () => {
         window.scrollY ? setActive(true) : setActive(false)
@@ -20,11 +23,17 @@ const Navbar = () => {
         }
     }, []);
 
-    const currentUser = {
-        id: 1,
-        username: 'Abeer',
-        isSeller: true,
+    const handleLogout = async () => {
+      try {
+        newRequest.post('/auth/logout')
+        localStorage.setItem('currentUser', null)
+        navigate('/')
+      } catch (err) {
+        console.log(err)
+      }
     }
+
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'))
 
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
@@ -39,15 +48,26 @@ const Navbar = () => {
           <span>Fiverr Business</span>
           <span>Explore</span>
           <span>English</span>
-          <span>Sign in</span>
+          {!currentUser && (
+            <Link className="link" to="/login">
+              <span>Sign in</span>
+            </Link>
+            )} 
+            {currentUser && (
+              <Link className='link' onClick={handleLogout}>
+                <span>Sign out</span>
+              </Link>
+            )}
+
           {!currentUser?.isSeller && <span>Become a Seller </span>}
-          {!currentUser && <button>Join</button>}
+          {!currentUser && (
+            <Link to="/register">
+              <button>Join</button>
+            </Link>
+          )}
           {currentUser && (
             <div className="user" onClick={() => setOpen(!open)}>
-              <img
-                src="https://images.pexels.com/photos/867349/pexels-photo-867349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                alt=""
-              />
+              <img src={currentUser.img || "/img/no-avatar.png"} alt="" />
               <span>{currentUser?.username}</span>
               {open && (
                 <div className="options">
@@ -67,7 +87,7 @@ const Navbar = () => {
                   <Link className="link" to="/messages">
                     Messages
                   </Link>
-                  <Link className="link" to="/">
+                  <Link className="link" onClick={handleLogout}>
                     Logout
                   </Link>
                 </div>
@@ -76,7 +96,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {(active || pathname !=='/') && (
+      {(active || pathname !== "/") && (
         <>
           <hr />
           <div className="menu">
