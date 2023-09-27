@@ -3,7 +3,7 @@ import './Home.scss'
 import Featured from '../../components/featured/Featured'
 import TrustedBy from '../../components/trustedBy/trustedBy';
 import { cards, projects } from '../../data';
-import CatCard from '../../components/catCard/catCard';
+import CatCard from '../../components/catCard/CatCard';
 import ProjectCard from '../../components/projectCard/ProjectCard';
 import Slide from '../../components/slide/slide';
 
