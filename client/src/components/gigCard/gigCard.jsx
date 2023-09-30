@@ -11,37 +11,46 @@ const GigCard = ({item}) => {
     queryKey: [`${item.userId}`],
     queryFn: () =>
       newRequest
-        .get(`/users/`)
+        .get(`/users/${item.userId}`)
         .then((res) => {
           return res.data;
         }),
   });
   return (
-    <Link className='link' to='/gig/123'>
-      <div className='gigCard'>
+    <Link className="link" to={`/gig/${item._id}`}>
+      <div className="gigCard">
         <img src={item.cover} alt="" />
         <div className="info">
-          <div className="user">
-            <img src={item.pp} alt="" />
-            <span>{item.username}</span>
-          </div>
+          {isLoading ? (
+            "Loading..."
+          ) : error ? (
+            "Something went wrong"
+          ) : (
+            <div className="user">
+              <img src={data.img || "/img/no-avatar.png"} alt="" />
+              <span>{data.username}</span>
+            </div>
+          )}
           <p>{item.desc}</p>
           <div className="star">
-            <img src='../img/star.png' alt="" />
-            <span>{item.star}</span>
+            <img src="../img/star.png" alt="" />
+            <span>
+              {!isNaN(item.totalStars / item.starNumber) &&
+                Math.round(item.totalStars / item.starNumber)}
+            </span>
           </div>
         </div>
-      <hr />
-      <div className="details">
-        <img src='../img/heart.png' alt="" />
-        <div className="price">
-          <span>STARTING AT</span>
-          <h2>${item.price}</h2>
+        <hr />
+        <div className="details">
+          <img src="../img/heart.png" alt="" />
+          <div className="price">
+            <span>STARTING AT</span>
+            <h2>${item.price}</h2>
+          </div>
         </div>
       </div>
-      </div>
     </Link>
-  )
+  );
 }
 
 export default GigCard
