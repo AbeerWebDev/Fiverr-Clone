@@ -1,29 +1,36 @@
 import React from 'react'
 import './Review.scss'
+import { useQuery } from "@tanstack/react-query";
+import newRequest from '../../utils/newRequest';
 
 const Review = ({review}) => {
+   const { isLoading, error, data } = useQuery({
+     queryKey: [review.userId],
+     queryFn: () =>
+       newRequest.get(`/users/${review.userId}`).then((res) => {
+         return res.data;
+       }),
+   }); 
+
   return (
     <div>
       <div className="review">
+      {isLoading ? "Loading..." : error ? error :
         <div className="user">
           <img
             className="pp"
-            src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src={data.img || '/img/no-avatar.png'}
             alt=""
           />
           <div className="info">
-            <span>John Doe</span>
+            <span>{data.username}</span>
             <div className="country">
-              <img
-                src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png"
-                alt=""
-              />
-              <span>United States</span>
+              <span>{data.country}</span>
             </div>
           </div>
         </div>
+        }
         <div className="stars">
-
           {new Array(review.star)
             .fill()
             .map((item, i) => (
