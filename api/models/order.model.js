@@ -29,10 +29,10 @@ const OrderSchema = new Schema(
     },
     isCompleted: {
         type: Boolean,
-        required: false
+        default: false
     },
     payment_intent: {
-        type: Boolean,
+        type: String,
         required: false
     },
   },

@@ -37,20 +37,21 @@ console.log(`gigId: ${gigId}`)
   return (
     <div className="reviews">
       <h2>Reviews</h2>
-      {isLoading ? "Loading..." : error ? "Something went wrong!" : data.map(review=> (
-        <Review key={review._id} review={review}/>
-      ))}
-      <hr />
+      {isLoading
+        ? "Loading..."
+        : error
+        ? "Something went wrong!"
+        : data.map((review) => <Review key={review._id} review={review} />)}
       <div className="add">
         <h3>Add a Review</h3>
-        <form action="" onSubmit={handleSubmit}>
-          <input type="text" placeholder='Tell us what you think'/>
+        <form action="" className="addForm" onSubmit={handleSubmit}>
+          <input type="text" placeholder="Tell us what you think" />
           <select name="" id="">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="1">1 Star</option>
+            <option value="2">2 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5">5 Stars</option>
           </select>
           <button>Submit</button>
         </form>

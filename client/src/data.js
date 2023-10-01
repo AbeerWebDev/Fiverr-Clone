@@ -13,15 +13,15 @@ export const cards = [
   },
   {
     id: 3,
-    title: "WordPress",
-    desc: "Customize your site",
-    img: "https://images.pexels.com/photos/4371669/pexels-photo-4371669.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    title: "Social Media",
+    desc: "Reach more customers",
+    img: "https://images.pexels.com/photos/11378899/pexels-photo-11378899.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
   },
   {
     id: 4,
-    title: "Voice Over",
-    desc: "Share your message",
-    img: "https://images.pexels.com/photos/7608079/pexels-photo-7608079.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    title: "WordPress",
+    desc: "Customize your site",
+    img: "https://images.pexels.com/photos/4371669/pexels-photo-4371669.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
   },
   {
     id: 5,
@@ -31,9 +31,9 @@ export const cards = [
   },
   {
     id: 6,
-    title: "Social Media",
-    desc: "Reach more customers",
-    img: "https://images.pexels.com/photos/11378899/pexels-photo-11378899.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    title: "Voice Over",
+    desc: "Share your message",
+    img: "https://images.pexels.com/photos/7608079/pexels-photo-7608079.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
   },
   {
     id: 7,
