@@ -16,7 +16,7 @@ const Review = ({review}) => {
     <div>
       <div className="review">
       <hr />
-      {isLoading ? "Loading..." : error ? error :
+      {isLoading ? "Loading..." : error ? 'Something went wrong' :
         <div className="user">
           <img
             className="pp"

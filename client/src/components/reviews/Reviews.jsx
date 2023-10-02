@@ -16,7 +16,6 @@ const Reviews = ({gigId}) => {
         return res.data;
       }),
   }); 
-console.log(`gigId: ${gigId}`)
 
   const mutation = useMutation({
     mutationFn: (review) => {
