@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import './Navbar.scss'
 import newRequest from '../../utils/newRequest';
 import { useNavigate } from 'react-router-dom'
+import getCurrentUser from '../../utils/getCurrentUser';
 
 const Navbar = () => {
     const [active, setActive] = useState(false);
@@ -33,7 +34,7 @@ const Navbar = () => {
       }
     }
 
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+    const currentUser = getCurrentUser()
 
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>

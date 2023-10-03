@@ -3,10 +3,11 @@ import './Message.scss'
 import { Link, useParams } from "react-router-dom";
 import newRequest from '../../utils/newRequest';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import getCurrentUser from '../../utils/getCurrentUser';
 
 const Message = () => {
   const { id } = useParams()
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"))
+   const currentUser = getCurrentUser();
   const queryClient = useQueryClient();
 
   const { isLoading, error, data } = useQuery({
