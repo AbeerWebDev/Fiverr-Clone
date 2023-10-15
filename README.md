@@ -83,10 +83,10 @@ The Fiverr Clone App is currently in a completed state.
 * Enhance the user interface and user experience.
 
 ## Acknowledgements
-Special thanks to Lam Dev for the inspiration and guidance in building this project.
+Many thanks to the React development communities.
 
 ## Contact
-Created by [Abeer Ahmed](https://www.linkedin.com/in/abeerdev/) - feel free to contact me.
+Created by Abeer Ahmed [LinkedIn profile](https://www.linkedin.com/in/abeerwebdev/) - feel free to contact me.
 
 
 
