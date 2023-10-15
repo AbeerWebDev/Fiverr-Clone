@@ -1,4 +1,3 @@
-# Fiverr-Clone
 # Fiverr Clone App
 
 ## Table of Contents
