@@ -79,12 +79,11 @@ To get the Fiverr Clone App up and running on your local machine, follow these s
 The Fiverr Clone App is currently in a completed state.
 
 ## Room for Improvement
-* Implement payment processing for gig transactions.
 * Add real-time notifications.
 * Enhance the user interface and user experience.
 
 ## Acknowledgements
-Special thanks to LamaDev for the inspiration and guidance in building this project.
+Special thanks to Lama Dev for the inspiration and guidance in building this project.
 
 ## Contact
 Created by [Abeer Ahmed](https://www.linkedin.com/in/abeerdev/) - feel free to contact me.
