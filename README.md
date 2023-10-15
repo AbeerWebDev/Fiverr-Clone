@@ -44,9 +44,12 @@ The purpose of this project is to create a platform that mimics the functionalit
 ## Screenshots
 Home Page 
 ![project screenshot](fiverr-home.png)
-![Gig Listing](screenshots/gig_listing.png)
-![Messaging](screenshots/messaging.png)
-![Profile Page](screenshots/profile.png)
+Gig Listing Page
+![project screenshot](gigs.png)
+Messaging Page
+![project screenshot](messaging.png)
+Add GigPage
+![project screenshot](add.png)
 
 ## Installation and Setup Instructions
 To get the Fiverr Clone App up and running on your local machine, follow these steps:
