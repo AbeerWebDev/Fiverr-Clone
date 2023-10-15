@@ -42,7 +42,8 @@ The purpose of this project is to create a platform that mimics the functionalit
 * Secure payment processing with Stripe integration
 
 ## Screenshots
-![Home Page](screenshots/fiverr-home.png)
+Home Page 
+![project screenshot](fiverr-home.png)
 ![Gig Listing](screenshots/gig_listing.png)
 ![Messaging](screenshots/messaging.png)
 ![Profile Page](screenshots/profile.png)
